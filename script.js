@@ -89,3 +89,10 @@ const createUsernames = function (accs) {
       .join('');
   });
 };
+
+const calcDisplayBalance = function (movements) {
+  labelBalance.textContent = `${movements.reduce(
+    (acc, mov) => acc + mov,
+    0
+  )} EUR`;
+};
