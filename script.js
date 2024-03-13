@@ -104,4 +104,11 @@ const calcDisplaySummary = function (movements) {
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(outgoing)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(mov => 0.012 * mov)
+    .filter(int => int >= 1)
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest}€`;
 };
