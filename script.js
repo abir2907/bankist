@@ -91,8 +91,14 @@ const createUsernames = function (accs) {
 };
 
 const calcDisplayBalance = function (movements) {
-  labelBalance.textContent = `${movements.reduce(
-    (acc, mov) => acc + mov,
-    0
-  )} EUR`;
+  labelBalance.textContent = `${movements.reduce((acc, mov) => acc + mov, 0)}€`;
 };
+
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}€`;
+};
+
+calcDisplaySummary(account1.movements);
