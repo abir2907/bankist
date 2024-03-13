@@ -112,3 +112,9 @@ const calcDisplaySummary = function (movements) {
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest}€`;
 };
+
+// Event Handlers
+btnLogin.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log('LOGIN');
+});
