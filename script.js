@@ -92,8 +92,9 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 
-const calcDisplayBalance = function (movements) {
-  labelBalance.textContent = `${movements.reduce((acc, mov) => acc + mov, 0)}€`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance}€`;
 };
 
 const calcDisplaySummary = function (acc) {
@@ -140,7 +141,7 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginPin.blur();
 
     // Display balance
-    calcDisplayBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
 
     // Display summary
     calcDisplaySummary(currentAccount);
