@@ -149,7 +149,6 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
 
   if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
@@ -193,14 +192,14 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const reqLoan = +inputLoanAmount.value;
+  const reqLoan = Math.floor(inputLoanAmount.value);
 
   if (
     reqLoan > 0 &&
     currentAccount.movements.some(mov => mov >= 0.1 * reqLoan)
   ) {
     // Add movement
-    currentAccount.movements.push(amount);
+    currentAccount.movements.push(reqLoan);
 
     // Update UI
     updateUI(currentAccount);
