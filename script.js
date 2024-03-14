@@ -86,7 +86,7 @@ const displayMovements = function (acc, sort = false) {
 
     const date = new Date(acc.movementsDates[i]);
     const day = `${date.getDate()}`.padStart(2, 0);
-    const month = `${date.getMonth()}`.padStart(2, 0);
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
     const year = date.getFullYear();
     const displayDate = `${day}/${month}/${year}`;
 
@@ -246,7 +246,7 @@ btnSort.addEventListener('click', function (e) {
 
 const now = new Date();
 const day = `${now.getDate()}`.padStart(2, 0);
-const month = `${now.getMonth()}`.padStart(2, 0);
+const month = `${now.getMonth() + 1}`.padStart(2, 0);
 const year = now.getFullYear();
 const hour = now.getHours();
 const min = now.getMinutes();
