@@ -236,8 +236,8 @@ btnSort.addEventListener('click', function (e) {
 });
 
 const now = new Date();
-const day = now.getDate();
-const month = now.getMonth() + 1;
+const day = `${now.getDate()}`.padStart(2, 0);
+const month = `${now.getMonth()}`.padStart(2, 0);
 const year = now.getFullYear();
 const hour = now.getHours();
 const min = now.getMinutes();
