@@ -193,15 +193,16 @@ const startLogOutTimer = function () {
   };
 
   // Set time to 5 minutes
-  let time = 10;
+  let time = 300;
 
   // Call the timer every second
   tick();
   const timer = setInterval(tick, 1000);
+  return timer;
 };
 
 // Event Handlers
-let currentAccount;
+let currentAccount, timer;
 
 btnLogin.addEventListener('click', function (e) {
   e.preventDefault();
@@ -235,7 +236,9 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    startLogOutTimer();
+    // Check if there already is a timer
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
 
     // Update UI
     updateUI(currentAccount);
