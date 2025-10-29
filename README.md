@@ -148,4 +148,4 @@ This project is for educational purposes as part of Jonas Schmedtmann's JavaScri
 
 ---
 
-**Note:** This is a demo application for educational purposes. No real banking transactions are processed.`
+**Note:** This is a demo application for educational purposes. No real banking transactions are processed.
