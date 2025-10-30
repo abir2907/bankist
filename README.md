@@ -61,7 +61,7 @@ You can use the following demo credentials to log in and test all functionalitie
 1. Clone this repository
 
    ```bash
-   git clone https://github.com/your-username/bankist-app.git
+   git clone git@github.com:abir2907/bankist.git
 
    ```
 
